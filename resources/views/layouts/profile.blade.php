@@ -25,6 +25,7 @@
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
+                      {{config('app.name','Laravel')}}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -46,7 +47,7 @@
                               <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navberDropdown">
-                              <a href="{{ route('logout')}}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').cubmit();">
+                              <a href="{{ route('logout')}}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 {{ __('Logout')}}
                               </a>
                               <form id="logout-form" action="{{ route('logout')}}" method="POST" style="display: none;">
