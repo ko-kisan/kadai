@@ -143,7 +143,7 @@ return [
 
     'attributes' => [
       'title'=>'タイトル',
-      'boby'=>'本文'
+      'body'=>'本文'
     ],
 
 ];
