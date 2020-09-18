@@ -44,7 +44,7 @@
 				<div class="form-group row">
 					<label class="col-md-2" for="introduction">自己紹介欄</label>
 					<div class="col-md-10">
-						<textarea class="form-control" name="introduction" rows="8" cols="200">ここに記入して下さい</textarea>
+						<textarea class="form-control" name="introduction" rows="8" cols="200" placeholder="ここに記入して下さい"></textarea>
 					</div>
 				</div>
 				{{csrf_field()}}
