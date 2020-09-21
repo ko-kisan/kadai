@@ -21,8 +21,13 @@ class ProfileController extends Controller
 
 			unset($form['_token']);
 
+			$news->fill($form);
+			$news->save();
+
 			return redirect('admin/profile/create');
 		}
+
+		
 		public function edit()
 		{
 			return view ('admin.profile.edit');
