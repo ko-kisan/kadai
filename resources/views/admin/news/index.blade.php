@@ -16,7 +16,6 @@
 						<label class="col-md-2" for="">タイトル</label>
 						<div class="col-md-8">
 							<input type="text" class="form-control" name="cond_title" value="{{$cond_title}}">
-
 						</div>
 						<div class="col-md-2">
 							{{csrf_field()}}
@@ -26,7 +25,7 @@
 				</form>
 			</div>
 		</div>
-
+		{{--リスト--}}
 		<div class="row">
 			<div class="list-news col-md-12 mx-auto">
 				<div class="row">
@@ -48,6 +47,10 @@
 								<td>
 									<div >
 										<a href="{{action('Admin\NewsController@edit',['id'=>$news->id])}}">編集</a>
+									</div>
+									<div class="">
+										<a href="{{action('Admin\NewsController@delete',['id' => $news->id])}}">削除</a>
+
 									</div>
 								</td>
 							</tr>

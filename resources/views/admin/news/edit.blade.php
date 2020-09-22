@@ -10,7 +10,7 @@
 			<form class="" action="{{action('Admin\NewsController@update')}}" method="post" enctype="multipart/form-data">
 				@if(count($errors)>0)
 				<ul>
-					@foreach($errors->all()as $e)
+					@foreach($errors->all() as $e)
 					<li>{{$e}}</li>
 					@endforeach
 				</ul>
@@ -33,6 +33,7 @@
 						<label class="col-md-2" for="image">画像</label>
 						<div class="col-md-10">
 							<input type="file" class="form-control-file" name="image" value="">
+							
 							<div class="form-text text-info">
 								設定中: {{$news_form->image_path}}
 							</div>

@@ -23,14 +23,8 @@
 
 				<div class="form-group row">
 						<label for="gender" class="col-md-2">性別</label>
-						<div class="col-md-2">
-
-							<label >	男性 <input type="radio" name="gender" value="{{old('gender')}}"></label>
-						</div>
-						<div class="col-md-2">
-							<label for="gender">
-								女性 <input type="radio" name="gender" value="{{old('gender')}}">
-							</label>
+						<div class="col-md-10">
+							<input class="form-control"type="text" name="gender" value="{{old('gender')}}">
 						</div>
 				</div>
 
@@ -44,7 +38,7 @@
 				<div class="form-group row">
 					<label class="col-md-2" for="introduction">自己紹介欄</label>
 					<div class="col-md-10">
-						<textarea class="form-control" name="introduction" rows="8" cols="200" placeholder="ここに記入して下さい"></textarea>
+						<textarea class="form-control" name="introduction" rows="2" cols="200" placeholder="ここに記入して下さい"> </textarea>
 					</div>
 				</div>
 				{{csrf_field()}}
