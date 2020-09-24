@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile;
+use App\ProfileHistory;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -53,9 +55,13 @@ class ProfileController extends Controller
 			$profile_form=$request->all();
 
 			unset($profile_form['_token']);
-			unset($profile_form['remove']);
 
 			$profile->fill($profile_form)->save();
-			return redirect('admin/profile/edit');
+
+			$profile_history= new ProfileHistory;
+			$profile_history->profile_id = $profile->id;
+			$profile_history->edited_at = Carbon::now();
+			$profile_history->save();
+			return redirect('admin/profile/');
 		}
 }

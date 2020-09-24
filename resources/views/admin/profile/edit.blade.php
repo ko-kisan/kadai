@@ -15,7 +15,7 @@
 						@endforeach
 					</ul>
 					@endif
-					<div class="row">
+					<div class="form-group row">
 						<label class="col-md-2" for="name">名前</label>
 						<div class="col-md-10">
 							<input type="text" class="form-control" name="name" value="{{$profile_form->name}}">
@@ -36,7 +36,7 @@
 					<div class="form-group row">
 						<label class="col-md-2" for="introduction">自己紹介欄</label>
 						<div class="col-md-10">
-							<textarea name="introduction" class="form-control" rows="2" cols="200"></textarea>
+							<textarea name="introduction" class="form-control" rows="2" cols="200">{{$profile_form->introduction}}</textarea>
 						</div>
 					</div>
 					<div class="form-group row">
@@ -47,6 +47,18 @@
 						</div>
 					</div>
 				</form>
+				<div class="row mt-5">
+					<div class="col-md-4 mx-auto">
+						<h2>履歴</h2>
+						<ul class="list-group">
+							@if ($profile_form->_profile_histories != NULL)
+								@foreach ($profile_form->_profile_histories as $profile_history)
+								<li class="list-group-item">{{$profile_history->edited_at}}</li>
+								@endforeach
+							@endif
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

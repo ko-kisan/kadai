@@ -33,7 +33,7 @@
 						<label class="col-md-2" for="image">画像</label>
 						<div class="col-md-10">
 							<input type="file" class="form-control-file" name="image" value="">
-							
+
 							<div class="form-text text-info">
 								設定中: {{$news_form->image_path}}
 							</div>
@@ -52,6 +52,18 @@
 					</div>
 				</div>
 			</form>
+			<div class="row mt-5">
+				<div class="col-md-4 mx-auto">
+					<h2>編集履歴</h2>
+					<ul class="list-group">
+						@if ($news_form->histories != NULL)
+							@foreach ($news_form->histories as $history)
+							<li class="list-group-item">{{ $history->edited_at }}</li>
+							@endforeach
+						@endif
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
