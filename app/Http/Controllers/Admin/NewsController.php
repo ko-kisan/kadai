@@ -63,11 +63,10 @@ class NewsController extends Controller
         $path=$request->file('image')->store('public/image');
         $news->image_path=basename($path);
         unset($news_form['image']);
-      }else {
+      }elseif (0 == strcmp($request->remove, 'true')){
         $news->image_path=null;
       }
       unset($news_form['_token']);
-      unset($news_form['image']);
       unset($news_form['remove']);
 
       $news->fill($news_form)->save();
