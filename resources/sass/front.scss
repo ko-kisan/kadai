@@ -10,13 +10,16 @@ body {
 }
 
 .headline{
-	.coption{
+	.caption{
 		position: relative;
 		width: 350px;
 		.image{
 			img{
+
 		width: 100%;
+		object-fit: cover;
 			}
+
 		}
 		.title{
 			width: 100%;

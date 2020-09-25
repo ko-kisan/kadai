@@ -7,16 +7,18 @@ body {
   height: 82px;
 }
 
-.headline .coption {
+.headline .caption {
   position: relative;
   width: 350px;
 }
 
-.headline .coption .image img {
+.headline .caption .image img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.headline .coption .title {
+.headline .caption .title {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -24,12 +26,12 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.headline .coption .title h1 {
+.headline .caption .title h1 {
   color: #fff;
   font-size: 1.2em;
 }
 
-.headline .coption .body {
+.headline .caption .body {
   font-size: 0.8em;
 }
 
