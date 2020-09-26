@@ -1,8 +1,11 @@
 @extends('layouts.front')
 
+@section('title','ニュース投稿')
+
 @section('content')
 	<div class="containar">
 		<hr color="#c0c0c0">
+		<h1>ニュース一覧</h1>
 		@if (!is_null($headline))
 		<div class="row">
 			<div class="headline col-md-10 mx-auto">
