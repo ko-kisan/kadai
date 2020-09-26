@@ -26,8 +26,8 @@ class NewsController extends Controller
         // $path=$request->file('image')->store('public/image');
         // $news->image_path=basename($path);
         // s3使って画像を保存
-        $pash = Storage::disk('s3')->putFile('/',$from['image'],'public');
-        $news->image_path = Storage::desk('s3')->url($pash);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $news->image_path = Storage::disk('s3')->url($path);
       }else{
         $news->image_path=null;
       }
@@ -69,8 +69,8 @@ class NewsController extends Controller
       if(isset($news_form['image'])){
         // $path=$request->file('image')->store('public/image');
         // $news->image_path=basename($path);
-        $psth= Storage::desk('s3')->putFile('/',$from['image'],'public');
-        $news->image_path = Storage::desk('s3')->url($pash);
+        $path= Storage::disk('s3')->putFile('/',$news_form['image'],'public');
+        $news->image_path = Storage::disk('s3')->url($path);
         unset($news_form['image']);
       }elseif (0 == strcmp($request->remove, 'true')){
         $news->image_path=null;
