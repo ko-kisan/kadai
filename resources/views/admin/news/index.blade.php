@@ -39,7 +39,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach($posts as $news)
+							@foreach($posts as $posts)
 							<tr>
 								<th>{{$news->id}}</th>
 								<td>{{str_limit($news->title,100)}}</td>

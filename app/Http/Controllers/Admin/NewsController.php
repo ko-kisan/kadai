@@ -8,6 +8,7 @@ use App\News;
 use App\History;
 use Carbon\Carbon;
 use Storage;
+use Auth;
 
 class NewsController extends Controller
 {
@@ -47,7 +48,8 @@ class NewsController extends Controller
       if ($cond_title !=''){
         $posts=News::where('title', $cond_title)->git();
       }else{
-        $posts=News::all();
+        // $posts=News::all();
+        $posts=Auth::user()->news;
       }
       return view('admin.news.index',['posts'=>$posts,'cond_title'=>$cond_title]);
     }
